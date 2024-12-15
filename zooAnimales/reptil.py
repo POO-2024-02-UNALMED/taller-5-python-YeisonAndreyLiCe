@@ -35,3 +35,10 @@ class Reptil(Animal):
     
     def cantidadReptiles(self) -> int:
         return Reptil.iguanas + Reptil.serpientes
+    
+    # getter
+    def getColorEscamas(self) -> str:
+        return self._colorEScamas
+    
+    def getLargoCola(self) -> int:
+        return self._largoCola

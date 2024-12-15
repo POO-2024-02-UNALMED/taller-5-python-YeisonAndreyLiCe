@@ -6,7 +6,7 @@ class Ave(Animal):
     halcones: int = 0
     aguilas: int = 0
     def __init__(self, *args):
-        self._colorPlumas = args[-1:]
+        self._colorPlumas = args[-1]
         super().__init__(*args[:-1])
         Animal.update_type("Ave")
 
