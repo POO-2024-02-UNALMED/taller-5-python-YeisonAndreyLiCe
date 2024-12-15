@@ -17,9 +17,13 @@ class Animal:
     
     @classmethod
     def totalPorTipo(cls) -> str:
-        return (f"Mamíferos: {cls.animals_by_type['Mamífero']}\nAves: {cls.animals_by_type['Ave']}"
-                + f"\nReptiles: {cls.animals_by_type['Reptil']}\nPeces: {cls.animals_by_type['Pez']}\n"
-                + f"Anfibios: {cls.animals_by_type['Anfibio']}")
+        return (
+            f"Mamiferos: {cls.animals_by_type['Mamífero']}\n"
+            f"Aves: {cls.animals_by_type['Ave']}\n"
+            f"Reptiles: {cls.animals_by_type['Reptil']}\n"
+            f"Peces: {cls.animals_by_type['Pez']}\n"
+            f"Anfibios: {cls.animals_by_type['Anfibio']}"
+            )
     
     def toString(self) -> str:
         if self._zona:
