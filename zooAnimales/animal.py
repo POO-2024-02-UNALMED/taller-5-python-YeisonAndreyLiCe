@@ -1,11 +1,10 @@
-import gestion.zona as Zona
 from typing import Literal
 
 class Animal:
     totalAnimales: int = 0
     animals_by_type: dict[str, int] = {}
     
-    def __init__(self, name: str, age: int, habitat: str, gender: str, zone: Zona.Zona | None = None) -> None:
+    def __init__(self, name: str, age: int, habitat: str, gender: str = "F", zone = None) -> None:
         self._nombre = name
         self._edad = age
         self._habitat = habitat
@@ -47,6 +46,6 @@ class Animal:
     def getGenero(self) -> str:
         return self._genero
     
-    def getZona(self) -> Zona.Zona | None:
+    def getZona(self):
         return self._zona
     

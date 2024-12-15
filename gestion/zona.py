@@ -1,15 +1,16 @@
-import gestion.zoologico
 from zooAnimales import animal
 
 class Zona():
     
-    def __init__(self, name: str, zoo: gestion.zoologico.Zoologico, animals: list[animal.Animal]):
+    def __init__(self, name: str, zoo = None, animals: list[animal.Animal] = None):
         self._nombre = name
         self._zoo = zoo
         self._animales = animals
 
     def agregarAnimales(self, animal: list[animal.Animal]):
-        self._animales.extend(animal)
+        if not self._animales:
+            self._animales = []
+        self._animales.extend([animal])
 
     def cantidadAnimales(self):
         return len(self._animales)

@@ -3,9 +3,10 @@ from __future__ import annotations
 from zooAnimales.animal import Animal
 
 class Mamifero(Animal):
-    listado: list[Mamifero]
-    caballos: int
-    leones: int
+    listado: list[Mamifero] = []
+    caballos: int = 0
+    leones: int = 0
+
     def __init__(
         self,
         *args,
@@ -14,23 +15,25 @@ class Mamifero(Animal):
         super().__init__(*args[:-2])
         Animal.update_type("Mamífero")
 
-    def cantidadMamiferos(self) -> int:
-        return len(self.listado)
+    def cantidadMamiferos() -> int:
+        return len(Mamifero.listado)
 
+    @classmethod
     def crearCaballo(
-        self,
+        cls,
         *args,
     ) -> Mamifero:
         new = Mamifero(*args[:1], "pradera", *args[1:], True, 4)
-        Mamifero.listado.append(new)
-        Mamifero.caballos += 1
+        cls.listado.append(new)
+        cls.caballos += 1
         return new
 
+    @classmethod
     def crearLeon(
-        self,
+        cls,
         *args,
     ) -> Mamifero:
         new = Mamifero(*args[:1], "selva", *args[1:], True, 4)
-        Mamifero.listado.append(new)
-        Mamifero.leones += 1
+        cls.listado.append(new)
+        cls.leones += 1
         return new

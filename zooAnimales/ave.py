@@ -2,9 +2,9 @@ from __future__ import annotations
 from zooAnimales.animal import Animal
 
 class Ave(Animal):
-    listado: list[Ave]
-    halcones: int
-    aguilas: int
+    listado: list[Ave] = []
+    halcones: int = 0
+    aguilas: int = 0
     def __init__(self, *args):
         self.coloresPlumas = args[-1:]
         super().__init__(*args[:-1])
@@ -16,20 +16,22 @@ class Ave(Animal):
     def movimiento(self) -> str:
         return "volar"
 
+    @classmethod
     def crearHalcon(
-        self,
+        cls,
         *args,
     ) -> Ave:
         new = Ave(*args[:1], "montañas", *args[1:], "café glorioso")
-        Ave.halcones += 1
-        Ave.listado.append(new)
+        cls.halcones += 1
+        cls.listado.append(new)
         return new
 
+    @classmethod
     def crearAguila(
-        self,
+        cls,
         *args,
     ) -> Ave:
         new = Ave(*args[:1], "montañas", *args[1:],"blanco y amarillo")
-        Ave.listado.append(new)
-        Ave.aguilas += 1
+        cls.listado.append(new)
+        cls.aguilas += 1
         return new

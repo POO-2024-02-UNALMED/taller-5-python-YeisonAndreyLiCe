@@ -1,16 +1,14 @@
-import gestion.zona
-
 class Zoologico():
     
-    def __init__(self, name: str, location: str, zones: list[gestion.zona.Zona]):
+    def __init__(self, name: str, location: str, zones= None):
         self._nombre = name
         self._ubicacion = location
-        self._zonas = zones
+        self._zonas = zones or []
     
-    def agregarZonas(self, zona: list[gestion.zona.Zona]):
-        if self._zonas == None:
+    def agregarZonas(self, zona):
+        if not self._zonas:
             self._zonas = []
-        self._zonas.extend(zona)
+        self._zonas.extend([zona])
 
     def cantidadTotalAnimales(self):
         total = 0
