@@ -18,11 +18,11 @@ class Animal:
     @classmethod
     def totalPorTipo(cls) -> str:
         return (
-            f"Mamiferos: {cls.animals_by_type['Mamífero']}\n"
-            f"Aves: {cls.animals_by_type['Ave']}\n"
-            f"Reptiles: {cls.animals_by_type['Reptil']}\n"
-            f"Peces: {cls.animals_by_type['Pez']}\n"
-            f"Anfibios: {cls.animals_by_type['Anfibio']}"
+            f"Mamiferos : {cls.animals_by_type['Mamífero']}\n"
+            f"Aves : {cls.animals_by_type['Ave']}\n"
+            f"Reptiles : {cls.animals_by_type['Reptil']}\n"
+            f"Peces : {cls.animals_by_type['Pez']}\n"
+            f"Anfibios : {cls.animals_by_type['Anfibio']}"
             )
     
     def toString(self) -> str:
@@ -30,10 +30,10 @@ class Animal:
             return (f"Mi nombre es {self._nombre}, tengo una edad de"
                     f"{self._edad}, habito en {self._habitat}, mi genero es"
                     f"{self._genero} y la zona en la que me encuentro es"
-                    f"{self._zona.nombre}."
+                    f"{self._zona.nombre}"
                 )
 
-        return f"Mi nombre es {self._nombre}, tengo una edad de {self._edad}, habito en {self._habitat} y mi genero es {self._genero}."
+        return f"Mi nombre es {self._nombre}, tengo una edad de {self._edad}, habito en {self._habitat} y mi genero es {self._genero}"
    
     @classmethod
     def update_type(cls, type: Literal["Mamífero", "Ave", "Reptil", "Pez", "Anfibio"]) -> None:
