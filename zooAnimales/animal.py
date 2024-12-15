@@ -15,12 +15,13 @@ class Animal:
     def movimiento(self) -> str:
         return "Desplazarse"
     
-    def totalPorTipo(self) -> str:
-        return (f"Mamíferos: {Animal.animals_by_type['Mamífero']}\nAves: {Animal.animals_by_type['Ave']}"
-                + f"\nReptiles: {Animal.animals_by_type['Reptil']}\nPeces: {Animal.animals_by_type['Pez']}\n"
-                + f"Anfibios: {Animal.animals_by_type['Anfibio']}")
+    @classmethod
+    def totalPorTipo(cls) -> str:
+        return (f"Mamíferos: {cls.animals_by_type['Mamífero']}\nAves: {cls.animals_by_type['Ave']}"
+                + f"\nReptiles: {cls.animals_by_type['Reptil']}\nPeces: {cls.animals_by_type['Pez']}\n"
+                + f"Anfibios: {cls.animals_by_type['Anfibio']}")
     
-    def __str__(self) -> str:
+    def toString(self) -> str:
         if self._zona:
             return (f"Mi nombre es {self._nombre}, tengo una edad de"
                     f"{self._edad}, habito en {self._habitat}, mi genero es"
