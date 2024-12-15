@@ -37,3 +37,10 @@ class Mamifero(Animal):
         cls.listado.append(new)
         cls.leones += 1
         return new
+    
+    # getter
+    def isPelaje(self) -> str:
+        return self._pelaje
+    
+    def getPatas(self) -> int:
+        return self._patas

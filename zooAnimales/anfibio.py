@@ -34,3 +34,10 @@ class Anfibio(Animal):
     
     def movimiento(self) -> str:
         return "saltar"
+    
+    # getter
+    def getColorPiel(self) -> str:
+        return self._colorPiel
+    
+    def getVenenoso(self) -> bool:
+        return self._venenoso

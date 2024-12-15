@@ -6,7 +6,7 @@ class Ave(Animal):
     halcones: int = 0
     aguilas: int = 0
     def __init__(self, *args):
-        self.coloresPlumas = args[-1:]
+        self._colorPlumas = args[-1:]
         super().__init__(*args[:-1])
         Animal.update_type("Ave")
 
@@ -35,3 +35,7 @@ class Ave(Animal):
         cls.listado.append(new)
         cls.aguilas += 1
         return new
+    
+    # getter
+    def getColorPlumas(self) -> str:
+        return self._colorPlumas
